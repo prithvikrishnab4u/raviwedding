@@ -8,14 +8,6 @@ import React, { useState, useEffect, useRef } from "react";
  * 1. Create a free account at https://web3forms.com
  *    - Form name:  Dureddy Wedding RSVP
  *    - Domain:     dureddy.com   (use localhost only while testing locally)
- * 2. Paste your access key into WEB3FORMS_ACCESS_KEY below.
- * 3. Each RSVP emails you instantly + shows in the dashboard (30-day free
- *    storage — treat the emails as the permanent record).
- *
- * ── Photos ───────────────────────────────────────────────────────────────
- * Event visuals are hand-illustrated scenes, so the page looks finished with
- * zero photos. Add a URL to any `photo` field and it layers over the scene;
- * a broken/missing photo falls back to the illustration automatically.
  */
 
 const WEB3FORMS_ACCESS_KEY = "bad36740-22b4-4245-90a9-eecf1df52fd1"; // public key — safe in client code
@@ -50,7 +42,7 @@ const TIMELINE = [
     time: "6:00 PM",
     venue: "Cloud 9 Ranch @ Custer",
     address: "5083 Co Rd 126, Celina, TX 75009",
-    dress: "Modern Indian Chic — Cocktail Sarees, Lehengas, Indo-Western",
+    dress: "Modern Indian Chic: Cocktail Sarees, Lehengas, Indo-Western",
     dressColors: [
       { c: "#7A2330", n: "Maroon" },
       { c: "#0F4D46", n: "Emerald" },
@@ -332,7 +324,7 @@ const Petals = () => {
 
 // ── RSVP ─────────────────────────────────────────────────────────────────────
 function Rsvp() {
-  const [family, setFamily] = useState("Dureddy Family");
+  const [family, setFamily] = useState("");
   const [guest, setGuest] = useState("");
   const [diet, setDiet] = useState("");
   const [resp, setResp] = useState(RSVP_EVENTS.reduce((a, e) => ({ ...a, [e.key]: { going: null, count: 1 } }), {}));
@@ -501,12 +493,12 @@ export default function WeddingSite() {
             <div className="rw-fam-card">
               <Om w={38} /><p className="rw-fam-role">Groom's Family</p>
               <p className="rw-fam-house">Dureddy Family</p>
-              <p className="rw-fam-parents">Satya Reddy Dureddy &amp; Vijaya Jyothi Gaddam</p>
+              <p className="rw-fam-parents">Satya Reddy &amp; Vijaya Jyothi</p>
             </div>
             <div className="rw-fam-card">
               <Om w={38} /><p className="rw-fam-role">Bride's Family</p>
               <p className="rw-fam-house">Kandhala Family</p>
-              <p className="rw-fam-parents">Surender Reddy Kandhala &amp; Saritha</p>
+              <p className="rw-fam-parents">Surender Reddy &amp; Saritha</p>
             </div>
           </div>
         </div>
