@@ -47,7 +47,7 @@ const TIMELINE = [
     key: "mehendi",
     name: "Mehendi & Cocktail Night",
     date: "Friday, August 28, 2026",
-    time: "7:00 PM",
+    time: "6:00 PM",
     venue: "Cloud 9 Ranch @ Custer",
     address: "5083 Co Rd 126, Celina, TX 75009",
     dress: "Modern Indian Chic — Cocktail Sarees, Lehengas, Indo-Western",
@@ -63,7 +63,7 @@ const TIMELINE = [
     key: "wedding",
     name: "Wedding Ceremony",
     date: "Sunday, August 30, 2026",
-    time: "Muhurtham",
+    time: "Muhurtam · 11:48 AM",
     venue: "Bella Cavalli Events",
     address: "1651 W Sherman Dr, Aubrey, TX 76227",
     dress: "Traditional Indian Attire or Business Casual",
@@ -81,7 +81,7 @@ const TIMELINE = [
 const RSVP_EVENTS = [
   { key: "wedding", label: "Wedding Ceremony", sub: "Aug 30 · Bella Cavalli, Aubrey" },
   { key: "haldi", label: "Haldi Ceremony", sub: "Aug 28 · 9:00 AM · Cloud 9 Ranch" },
-  { key: "mehendi", label: "Mehendi & Cocktail", sub: "Aug 28 · 7:00 PM · Cloud 9 Ranch" },
+  { key: "mehendi", label: "Mehendi & Cocktail", sub: "Aug 28 · 6:00 PM · Cloud 9 Ranch" },
 ];
 
 const MOMENTS = [
@@ -358,12 +358,12 @@ function Rsvp() {
     const payload = {
       access_key: WEB3FORMS_ACCESS_KEY,
       subject: `Wedding RSVP — ${guest} (${family})`,
-      from_name: "Ravi Teja & Shruthi Wedding Site",
+      from_name: "Ravi Teja & Sruthi Wedding Site",
       "Family Name": family,
       "Contact Name": guest,
       "Wedding Ceremony (Aug 30)": fmt("wedding"),
       "Haldi (Aug 28, 9AM)": fmt("haldi"),
-      "Mehendi & Cocktail (Aug 28, 7PM)": fmt("mehendi"),
+      "Mehendi & Cocktail (Aug 28, 6PM)": fmt("mehendi"),
       "Dietary Restrictions": diet || "None noted",
       Summary: summary,
     };
@@ -470,7 +470,7 @@ export default function WeddingSite() {
         <div className="rw-hero-mandala"><Mandala size={620} opacity={0.12} /></div>
         <div className="rw-hero-inner rw-reveal">
           <p className="rw-eyebrow">Together with their families</p>
-          <h1 className="rw-names">Ravi Teja <span className="rw-amp">&amp;</span> Shruthi</h1>
+          <h1 className="rw-names">Ravi Teja <span className="rw-amp">&amp;</span> Sruthi</h1>
           <Divider />
           <p className="rw-hero-meta">August 28–30, 2026 · Dallas, Texas</p>
           <p className="rw-hero-sub">Hyderabad to Dallas</p>
@@ -499,16 +499,14 @@ export default function WeddingSite() {
           <Divider />
           <div className="rw-fam-grid">
             <div className="rw-fam-card">
-              <Om w={38} /><p className="rw-fam-role">Groom's Parents</p>
-              <p className="rw-fam-names">Satya Reddy Dureddy</p>
-              <p className="rw-fam-amp">&amp;</p>
-              <p className="rw-fam-names">Vijaya Jyothi Gaddam</p>
+              <Om w={38} /><p className="rw-fam-role">Groom's Family</p>
+              <p className="rw-fam-house">Dureddy Family</p>
+              <p className="rw-fam-parents">Satya Reddy Dureddy &amp; Vijaya Jyothi Gaddam</p>
             </div>
             <div className="rw-fam-card">
-              <Om w={38} /><p className="rw-fam-role">Bride's Parents</p>
-              <p className="rw-fam-names">Mr. &amp; Mrs. ⟨Name⟩</p>
-              <p className="rw-fam-amp">&amp;</p>
-              <p className="rw-fam-names" style={{ opacity: 0.5, fontStyle: "italic", fontSize: "1rem" }}>to be added</p>
+              <Om w={38} /><p className="rw-fam-role">Bride's Family</p>
+              <p className="rw-fam-house">Kandhala Family</p>
+              <p className="rw-fam-parents">Surender Reddy Kandhala &amp; Saritha</p>
             </div>
           </div>
         </div>
@@ -542,18 +540,6 @@ export default function WeddingSite() {
         </div>
       </section>
 
-      <section className="rw-moments">
-        <div className="rw-reveal"><h2 className="rw-section-title">The Weekend in Colour</h2><Divider /></div>
-        <div className="rw-mom-grid">
-          {MOMENTS.map((m, i) => (
-            <div key={m.key} className="rw-mom-tile rw-reveal" style={{ background: m.grad, transitionDelay: `${i * 70}ms` }}>
-              <div className="rw-mom-motif"><MomentMotif motif={m.motif} /></div>
-              <div className="rw-mom-cap"><h3>{m.title}</h3><p>{m.note}</p></div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       <section className="rw-section rw-rsvp" ref={rsvpRef}>
         <div className="rw-reveal">
           <h2 className="rw-section-title">RSVP</h2><Divider />
@@ -565,7 +551,7 @@ export default function WeddingSite() {
       <footer className="rw-footer">
         <Om w={56} />
         <p className="rw-footer-line">We look forward to celebrating with you</p>
-        <p className="rw-footer-names rw-serif">Ravi Teja &amp; Shruthi</p>
+        <p className="rw-footer-names rw-serif">Ravi Teja &amp; Sruthi</p>
         <p className="rw-footer-date">August 2026 · Dallas, Texas</p>
       </footer>
 
@@ -628,6 +614,8 @@ const CSS = `
 .rw-fam-role{font-family:var(--display);letter-spacing:.18em;text-transform:uppercase;font-size:.6rem;color:var(--gold-deep);margin:12px 0 16px;}
 .rw-fam-names{font-family:var(--serif);font-size:1.5rem;color:var(--charcoal);margin:2px 0;line-height:1.2;}
 .rw-fam-amp{font-family:var(--serif);font-style:italic;color:var(--gold);margin:2px 0;}
+.rw-fam-house{font-family:var(--serif);font-size:1.8rem;color:var(--emerald);margin:2px 0 10px;line-height:1.15;}
+.rw-fam-parents{font-size:.92rem;color:var(--charcoal);opacity:.8;margin:0;line-height:1.5;}
 
 .rw-tl-list{display:flex;flex-direction:column;gap:30px;margin-top:40px;}
 .rw-tl-card{display:grid;grid-template-columns:0.9fr 1.1fr;background:#fff;border-radius:20px;overflow:hidden;border:1px solid rgba(199,165,109,.28);box-shadow:0 16px 44px rgba(15,77,70,.07);}
