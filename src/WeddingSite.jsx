@@ -5,7 +5,7 @@ import React, { useState, useEffect, useRef } from "react";
  * Single-file React component. All bespoke styling scoped below.
  *
  * ── RSVP backend: Web3Forms ──────────────────────────────────────────────
- * 1. Create a free account at https://web3forms.com
+ * 1. Create a free account at  
  *    - Form name:  Dureddy Wedding RSVP
  *    - Domain:     dureddy.com   (use localhost only while testing locally)
  */
